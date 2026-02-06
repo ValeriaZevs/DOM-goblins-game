@@ -1,6 +1,6 @@
 ﻿# 🎮 DOM Game - Goblin Whack-a-Mole
 
-[![Build, Test and Deploy](https://github.com/ValeriaZevs//DOM-goblins-game/actions/workflows/deploy.yml/badge.svg)](https://github.com/YOUR_USERNAME/dom-game/actions/workflows/deploy.yml)
+[![Build, Test and Deploy](https://github.com/ValeriaZevs/DOM-goblins-game/actions/workflows/deploy.yml/badge.svg)](https://github.com/ValeriaZevs/DOM-goblins-game/actions/workflows/deploy.yml)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://ValeriaZevs.github.io/DOM-goblins-game/)
 
 Игра с перемещением гоблина по игровому полю 4x4. Реализована в рамках домашнего задания по теме "DOM".
