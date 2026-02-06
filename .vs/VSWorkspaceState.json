@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.github",
+    "\\.github\\workflows",
+    "\\src",
+    "\\src\\assets",
+    "\\src\\styles",
+    "\\__mocks__"
+  ],
+  "SelectedNode": "\\.eslintignore",
+  "PreviewInSolutionExplorer": false
+}

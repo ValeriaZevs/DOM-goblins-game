@@ -1,0 +1,14 @@
+# Игнорируем всё
+*
+
+# Но проверяем только src
+!src/
+!src/**/*
+
+# Игнорируем node_modules и build
+node_modules/
+dist/
+coverage/
+.DS_Store
+.env
+.env.local
