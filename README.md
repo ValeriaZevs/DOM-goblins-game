@@ -7,7 +7,7 @@
 
 ## 🎯 Демо
 
-👉 **[Открыть игру на GitHub Pages](https://YOUR_USERNAME.github.io/dom-game/)**
+👉 **[Открыть игру на GitHub Pages](https://ValeriaZevs.github.io/DOM-goblins-game/)**
 
 ## 📋 Функциональность
 
