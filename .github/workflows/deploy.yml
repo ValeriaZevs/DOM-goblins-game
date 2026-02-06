@@ -6,28 +6,28 @@ on:
   pull_request:
     branches: [ main, master ]
 
-# Разрешаем запись в репозиторий для деплоя
+# Р Р°Р·СЂРµС€Р°РµРј Р·Р°РїРёСЃСЊ РІ СЂРµРїРѕР·РёС‚РѕСЂРёР№ РґР»СЏ РґРµРїР»РѕСЏ
 permissions:
   contents: write
   pages: write
   id-token: write
 
-# Разрешаем одновременное выполнение одного деплоя
+# Р Р°Р·СЂРµС€Р°РµРј РѕРґРЅРѕРІСЂРµРјРµРЅРЅРѕРµ РІС‹РїРѕР»РЅРµРЅРёРµ РѕРґРЅРѕРіРѕ РґРµРїР»РѕСЏ
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
 jobs:
-  # Job для тестирования и сборки
+  # Job РґР»СЏ С‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ Рё СЃР±РѕСЂРєРё
   build-and-test:
     runs-on: ubuntu-latest
     
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     
     - name: Setup Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: '18'
         cache: 'npm'
@@ -45,12 +45,12 @@ jobs:
       run: npm run build
     
     - name: Upload production-ready build files
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: production-files
         path: ./dist
   
-  # Job для деплоя на GitHub Pages
+  # Job РґР»СЏ РґРµРїР»РѕСЏ РЅР° GitHub Pages
   deploy:
     environment:
       name: github-pages
@@ -61,19 +61,19 @@ jobs:
     
     steps:
     - name: Download artifact
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: production-files
         path: ./dist
     
     - name: Setup Pages
-      uses: actions/configure-pages@v3
+      uses: actions/configure-pages@v4
     
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v2
+      uses: actions/upload-pages-artifact@v3
       with:
         path: './dist'
     
     - name: Deploy to GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@v2
+      uses: actions/deploy-pages@v4
