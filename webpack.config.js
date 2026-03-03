@@ -1,14 +1,24 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const repositoryName = process.env.GITHUB_REPOSITORY
+  ? process.env.GITHUB_REPOSITORY.split('/')[1]
+  : '';
+
+const publicPath = process.env.GITHUB_ACTIONS && repositoryName
+  ? `/${repositoryName}/`
+  : '/';
+
 module.exports = {
   mode: 'production',
   entry: './src/index.js',
 
   output: {
-    filename: 'bundle.js',
+    filename: 'bundle.[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
+    publicPath,
+    assetModuleFilename: 'assets/[name][contenthash][ext][query]',
   },
 
   module: {
@@ -27,9 +37,6 @@ module.exports = {
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
         type: 'asset/resource',
-        generator: {
-          filename: 'assets/[name][ext]',
-        },
       },
     ],
   },
